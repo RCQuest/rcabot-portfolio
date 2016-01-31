@@ -1,0 +1,24 @@
+{
+  "name": "rcabot-portfolio",
+  "description": "www.rcabot.com",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "portfolio",
+    "rachelcabot",
+    "rcabot"
+  ],
+  "authors": [
+    "Rachel Brooke Cabot"
+  ],
+  "license": "MIT",
+  "homepage": "www.rcabot.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
