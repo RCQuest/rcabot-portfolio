@@ -22,6 +22,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.6"
+    "fira": "^0.1.0",
+    "angular": "^1.4.9",
+    "angular-tumblr-api-factory": "^0.5.0"
   }
 }
