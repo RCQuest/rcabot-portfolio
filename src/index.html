@@ -8,6 +8,8 @@
         <meta name="description" content="Rachel Cabot's portfolio site.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
         <!-- inject:css -->
         <!-- endinject -->
 
@@ -19,11 +21,31 @@
         <![endif]-->
 
         <nav>
-            <a href="http://rcabot.tumblr.com/about"><div><i class="fa fa-female"></i> Me</div></a>
-            <a href="http://rcabot.tumblr.com/tagged/project"><div><i class="fa fa-archive"></i> Projects</div></a>
-            <a href="http://rcabot.tumblr.com/tagged/accolade"><div><i class="fa fa-star-o"></i> Accolades</div></a>
-            <a href="http://rcabot.tumblr.com/partners"><div><i class="fa fa-users"></i> Associates</div></a>
-            <a href="https://www.linkedin.com/in/rcabotcs"><div><i class="fa fa-newspaper-o"></i> CV</div></a>
+            <a href="http://rcabot.tumblr.com/about">
+                <div>
+                <i class="fa fa-female">
+                </i> Me</div>
+            </a>
+            <a href="http://rcabot.tumblr.com/tagged/project">
+                <div>
+                <i class="fa fa-archive">
+                </i> Projects</div>
+            </a>
+            <a href="http://rcabot.tumblr.com/tagged/accolade">
+                <div>
+                <i class="fa fa-star-o">
+                </i> Accolades</div>
+            </a>
+            <a href="http://rcabot.tumblr.com/partners">
+                <div>
+                <i class="fa fa-users">
+                </i> Associates</div>
+            </a>
+            <a href="https://www.linkedin.com/in/rcabotcs">
+                <div>
+                <i class="fa fa-newspaper-o">
+                </i> CV</div>
+            </a>
         </nav><div class="main">
             <div class="main-content">
                 <h1 class="code-title">
@@ -35,12 +57,28 @@
             </div>
         </div>
 
-        <div ng-controller="TumblrInjectCtrl" class="tumblr-content">
-            <div ng-repeat="post in tumblrPosts">
-                <a href="{{post.short_url}}">
-                    <img src="{{post.photos[0].alt_sizes[1].url}}">
-                </a>
-            </div>
+        <div ng-controller="TumblrInjectCtrl" class="">
+            <ul class="tumblr-content">
+                <li ng-if="!tumblrPosts">
+                    <i class="fa fa-cog fa-spin"></i>
+                </li>
+                <li ng-repeat="post in tumblrPosts"> 
+                    <a href="{{post.short_url}}">
+                        <img ng-src="{{post.photos[0].alt_sizes[2].url}}" alt=""/>
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="caption-text">
+                                <h1>{{post.summary | limitTo:20 }}...</h1>
+                                <p>
+                                    <i class="fa fa-tumblr"></i>
+                                    <i class="fa fa-arrow-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
         </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

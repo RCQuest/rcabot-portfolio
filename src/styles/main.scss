@@ -1,7 +1,20 @@
+::selection{
+	background: turquoise;
+}
+
+::-moz-selection{
+	background: turquoise;
+}
+
 body {
+	margin:0;
 	background-color: #111;
 	color: #FFF;
 	font-family: "Fira Sans";
+	background:url("../assets/bg.jpg");
+	background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 0 -100px;
 }
 
 h1 {
@@ -38,14 +51,13 @@ a:hover{
 		top: 50%;
 		transform: translateY(-80%);
 	}
-}
 
-body{
-	// background:url("../assets/small_steps.PNG")
-	background:url("http://gradle.wpengine.netdna-cdn.com/wp-content/uploads/2015/10/Mountain3.svg");
-	background-repeat: no-repeat;
-    background-position: 50% 54%;
-    background-size: 100% 900%;
+
+
+
+
+
+
 }
 
 nav{
@@ -55,6 +67,10 @@ nav{
 	height:3em;
 	position: fixed;
 	z-index: 10;
+
+	a{
+		text-decoration: none;
+	}
 
 	div{
 		padding:1.5em 0;
@@ -79,12 +95,21 @@ nav:after{
 	background-color:#000;
 	width:100%;
 	height:50vh;
-	div{
-		display:inline-block;
+	overflow-y: hidden;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	.fa-spin{
+		font-size:24px;
+	}
+
+	li{
+		float: left;
+		padding: 0px;
 		position: relative;
+		overflow: hidden;
 		width: 20%;
 		height: 50%;
-		overflow: hidden;
 		img{
 			position: absolute;
 			left: 50%;
@@ -94,8 +119,46 @@ nav:after{
 			-webkit-transform: translate(-50%,-50%);
 			  -ms-transform: translate(-50%,-50%);
 			      transform: translate(-50%,-50%);
+			// float: left;
+			// z-index: 4;
 		}
 	}
+	
+}
+.tumblr-content li:hover .caption {
+	opacity: 1;
+}
+.tumblr-content .caption {
+	cursor: pointer;
+	position: absolute;
+	opacity: 0;
+	overflow-x:wrap;
+	-webkit-transition: all 0.45s ease-in-out;
+	-moz-transition: all 0.45s ease-in-out;
+	-o-transition: all 0.45s ease-in-out;
+	-ms-transition: all 0.45s ease-in-out;
+	transition: all 0.45s ease-in-out;
+}
+.tumblr-content .blur {
+	background-color: rgba(0,0,0,0.65);
+	height: 25vh;
+	width: 20vw;
+	z-index: 5;
+	position: absolute;
+}
+.tumblr-content .caption-text {
+	position: absolute;
+	top: 0vh;
+	left:0px;
+	z-index: 10;
+	color: #fff;
+	height: 25vh;
+	width: 20vw;
+	text-align: center;
+}
+
+.tumblr-content .caption-text h1 {
+	padding-top:10px;
 }
 
 .blink {
